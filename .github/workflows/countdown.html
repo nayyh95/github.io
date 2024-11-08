@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>윤석열 대통령 퇴임 카운트다운</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        function updateCountdown() {
+            $.get('/', function(data) {
+                $('#countdown').html(data);
+            });
+        }
+        setInterval(updateCountdown, 1000);
+    </script>
+</head>
+<body>
+    <h1>윤석열 대통령 퇴임까지 남은 시간</h1>
+    <div id="countdown">
+        {{ years }}년 {{ months }}개월 {{ days }}일 
+        {{ hours }}시간 {{ minutes }}분 {{ seconds }}초
+    </div>
+</body>
+</html>
